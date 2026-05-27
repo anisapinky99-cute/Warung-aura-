@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAKSO SIDO MAMPIR | Lezat & Menggugah Selera</title>
+    <!-- CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- 🎨 KONFIG WARNA UTAMA (SESUAI PERINTAH: PINK SOFT & MERAH) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pinkSoft: '#FFE6EE', // ✅ Latar & Kartu
+                        merah: '#E63946',    // ✅ Header, Judul, Tombol
+                        merahGelap: '#d62839',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'], // ✅ Font Modern
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- ✨ STYLE & ANIMASI (HOVER NAIK KE ATAS, BAYANGAN, TRANSISI HALUS) -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .nav-link {
+                @apply px-3 md:px-4 py-2 hover:text-merah font-medium transition-all duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-merah hover:after:w-full after:transition-all;
+            }
+            .card-menu {
+                @apply bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-pinkSoft/60;
+            }
+            .btn-utama {
+                @apply bg-merah hover:bg-merahGelap text-white px-5 py-2.5 rounded-lg transition font-semibold shadow-md hover:shadow-lg;
+            }
+            .btn-kedua {
+                @apply bg-pinkSoft hover:bg-merah text-merah hover:text-white px-5 py-2.5 rounded-lg transition font-semibold border border-merah;
+            }
+            .section-title {
+                @apply text-[clamp(1.7rem,4vw,2.7rem)] font-bold text-merah text-center mb-4;
+            }
+            .text-biasa {
+                @apply text-gray-700 leading-relaxed;
+            }
+        }
+    </style>
+</head>
+<body class="bg-pinkSoft/20 font-poppins">
+
+    <!-- 🧭 NAVIGASI BAR (✅ Beranda, Menu, Tentang, Testimoni, Kontak) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
+            <a href="#" class="text-xl md:text-2xl font-bold text-merah flex items-center gap-2">
+                <i class="fas fa-bowl-food"></i> BAKSO SIDO MAMPIR
+            </a>
+            <div class="flex gap-1 md:gap-1 mt-1 md:mt-0">
+                <a href="#beranda" class="nav-link">Beranda</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#tentang" class="nav-link">Tentang</a>
+                <a href="#testimoni" class="nav-link">Testimoni</a>
+                <a href="#kontak" class="nav-link">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🖼️ SLIDE COVER / HERO UTAMA 
+         ✅ GADIS/ MODEL PEREMPUAN SEDANG MAKAN BAKSO (FOTO TERTINGGI KUALITAS & MENGGUGAH SELERA)
+         ✅ JUDUL BESAR: BAKSO SIDO MAMPIR
+         ✅ TOMBOL: LIHAT MENU & PESAN SEKARANG
+    -->
+    <section id="beranda" class="container mx-auto px-4 py-8 md:py-14">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-10">
+            <div class="order-2 md:order-1 text-center md:text-left">
+                <h1 class="text-[clamp(2rem,6vw,4rem)] font-extrabold text-merah leading-tight drop-shadow-md">
+                    BAKSO SIDO MAMPIR 🥣🔥
+                </h1>
+                <p class="text-base md:text-lg text-gray-700 mt-3 mb-5">
+                    Nikmati kenikmatan bakso asli daging sapi murni, tekstur kenyal, kuah kaldu tulang yang gurih & hangat. Dijamin bikin ketagihan & pasti ingin mampir lagi! ✨
+                </p>
+                <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                    <a href="#menu" class="btn-utama"><i class="fas fa-utensils"></i> Lihat Menu Kami</a>
+                    <a href="#kontak" class="btn-kedua"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <!-- ✅ GAMBAR: PEREMPUAN CANTIK SEDANG MAKAN BAKSO (REALISTIS & ENAK DILIHAT) -->
+                <img 
+                    src="https://images.unsplash.com/photo-1623006235265-6c99f3520d1c?q=80&w=800&auto=format&fit=crop" 
+                    alt="Gadis cantik sedang menikmati semangkuk bakso panas yang lezat dan menggugah selera" 
+                    class="rounded-xl md:rounded-2xl shadow-2xl w-full h-auto max-h-[500px] object-cover mx-auto border-4 border-white hover:scale-[1.02] transition-transform duration-300">
+                <p class="text-center text-sm text-merah font-medium mt-2">⭐⭐⭐⭐⭐ 100% Daging Asli & Halal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📝 SLIDE BARU: PENJELASAN TENTANG MAKANAN BAKSO 
+         ✅ SEBELAH KIRI: TEKS PENJELASAN
+         ✅ SEBELAH KANAN: GAMBAR BAKSO UTUH (MENGGUGAH SELERA)
+    -->
+    <section id="penjelasan" class="bg-white/60 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">🍲 Mengapa Bakso Kami Spesial?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-10 mt-6">
+                <!-- KIRI: TEKS PENJELASAN -->
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-bold text-merah mb-3">Bakso: Makanan Favorit Sejuta Umat</h3>
+                    <p class="text-biasa text-lg">
+                        Bakso adalah makanan berbahan dasar daging cincang yang dicampur dengan tepung tapioka dan bumbu rahasia. Di <b>BAKSO SIDO MAMPIR</b>, kami menggunakan <b>100% Daging Sapi Segar Pilihan</b>, minim tepung, dan tanpa pengawet kimia.
+                        <br><br>
+                        Kuahnya dibuat dari rebusan tulang sapi & bumbu rempah selama berjam-jam hingga menghasilkan kaldu yang kental, gurih, dan aromanya menggugah selera. Teksturnya kenyal, padat, saat digigit rasanya lembut namun tetap bertekstur daging asli.
+                        <br><br>
+                        Cocok dimakan kapan saja: siang, sore, atau malam, baik untuk makan siang, makan malam, atau sekadar camilan hangat bersama keluarga & teman.
+                    </p>
+                </div>
+                <!-- KANAN: GAMBAR BAKSO UTUH (SANGAT ENAK DILIHAT) -->
+                <div class="order-1 md:order-2">
+                    <img 
+                        src="https://images.unsplash.com/photo-1574484283957-209015060306?q=80&w=700&auto=format&fit=crop" 
+                        alt="Semangkuk bakso lengkap dengan kuah panas, sambal, dan sayuran segar" 
+                        class="rounded-xl shadow-xl w-full h-auto max-h-[400px] object-cover border-4 border-pinkSoft/40 hover:shadow-2xl transition-shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📋 KATEGORI MENU -->
+    <section class="bg-pinkSoft/10 py-8">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">🍽️ Kategori Menu Kami</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6 mt-6">
+                <div class="bg-white rounded-xl p-4 text-center shadow hover:bg-merah hover:text-white transition-all hover:-translate-y-1">
+                    <i class="fas fa-circle text-3xl mb-2"></i>
+                    <p class="font-semibold">Bakso Halus</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 text-center shadow hover:bg-merah hover:text-white transition-all hover:-translate-y-1">
+                    <i class="fas fa-dumbbell text-3xl mb-2"></i>
+                    <p class="font-semibold">Bakso Urat</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 text-center shadow hover:bg-merah hover:text-white transition-all hover:-translate-y-1">
+                    <i class="fas fa-pepper-hot text-3xl mb-2"></i>
+                    <p class="font-semibold">Bakso Pedas</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 text-center shadow hover:bg-merah hover:text-white transition-all hover:-translate-y-1">
+                    <i class="fas fa-egg text-3xl mb-2"></i>
+                    <p class="font-semibold">Bakso Isi</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 text-center shadow hover:bg-merah hover:text-white transition-all hover:-translate-y-1">
+                    <i class="fas fa-bowl-rice text-3xl mb-2"></i>
+                    <p class="font-semibold">Mie Ayam</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🛒 DAFTAR MENU & HARGA (✅ 100% SESUAI, FOTO SPESIFIK & MENGGUGAH SELERA) -->
+    <section id="menu" class="py-10 bg-white/40">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">📋 Daftar Menu & Harga Terbaru</h2>
+            <p class="text-center text-gray-600 mb-8">Semua menu disajikan hangat dengan bahan berkualitas terbaik</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 md:gap-6">
+
+                <!-- 1. ✅ BAKSO BIASA - 15.000 (FOTO KHUSUS BAKSO BIASA) -->
+                <div class="card-menu">
+                    <img 
+                        src="https://images.unsplash.com/photo-1592663521554-82180869-658c?q=80&w=600&auto=format&fit=crop" 
+                        alt="Bakso Biasa Halus Daging Sapi Kuah Segar" 
+                        class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-xl text-gray-800">🍜 Bakso Biasa</h3>
+                        <div class="text-yellow-500 text-sm my-1">⭐⭐⭐⭐⭐</div>
+                        <p class="text-merah font-bold text-lg mt-1">Rp 15.000</p>
+                        <p class="text-gray-600 text-sm mt-2 mb-4">Bakso halus lembut, kuah bening kaldu sapi segar, irisan daun bawang & seledri.</p>
+                        <a href="https://wa.me/6282183379680?text=Saya%20pesan%20Bakso%20Biasa%201%20Porsi" target="_blank" class="block w-full btn-kedua text-sm py-2">
+                            <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. ✅ BAKSO URAT - 17.000 (FOTO KHUSUS BAKSO URAT BESAR) -->
+                <div class="card-menu">
+                    <img 
+                        src="https://images.unsplash.com/photo-1603033125528-1a8de8f1a55d?q=80&w=600&auto=format&fit=crop" 
+                        alt="Bakso Urat Besar Kenyal Daging Sapi Asli" 
+                        class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-xl text-gray-800">🥩 Bakso Urat</h3>
+                        <div class="text-yellow-500 text-sm my-1">⭐⭐⭐⭐⭐</div>
+                        <p class="text-merah font-bold text-lg mt-1">Rp 17.000</p>
+                        <p class="text-gray-600 text-sm mt-2 mb-4">Tekstur kenyal padat, berisi potongan urat sapi asli, digigit terasa dagingnya!</p>
+                        <a href="https://wa.me/6282183379680?text=Saya%20pesan%20Bakso%20Urat%201%20Porsi" target="_blank" class="block w-full btn-kedua text-sm py-2">
+                            <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. ✅ MIE AYAM BAKSO - 20.000 (FOTO KHUSUS MIE AYAM BAKSO) -->
+                <div class="card-menu">
+                    <img 
+                        src="https://images.unsplash.com/photo-1611143313839-c1692d56592c?q=80&w=600&auto=format&fit=crop" 
+                        alt="Mie Ayam Bakso Gurih Komplit" 
+                        class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-xl text-gray-800">🍝 Mie Ayam Bakso</h3>
+                        <div class="text-yellow-500 text-sm my-1">⭐⭐⭐⭐⭐</div>
+                        <p class="text-merah font-bold text-lg mt-1">Rp 20.000</p>
+                        <p class="text-gray-600 text-sm mt-2 mb-4">Mie kuning kenyal, ayam kecap gurih, lengkap dengan bakso halus, sawi & kerupuk.</p>
+                        <a href="https://wa.me/6282183379680?text=Saya%20pesan%20Mie%20Ayam%20Bakso%201%20Porsi" target="_blank" class="block w-full btn-kedua text-sm py-2">
+                            <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. ✅ BAKSO MERCON - 25.000 (FOTO KHUSUS BAKSO CABAI/PEDAS) -->
+                <div class="card-menu">
+                    <img 
+                        src="https://images.unsplash.com/photo-1624088608628-9525391090d6?q=80&w=600&auto=format&fit=crop" 
+                        alt="Bakso Mercon Super Pedas Berisi Cabai Utuh" 
+                        class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-xl text-gray-800">🌶️ Bakso Mercon</h3>
+                        <div class="text-yellow-500 text-sm my-1">⭐⭐⭐⭐⭐</div>
+                        <p class="text-merah font-bold text-lg mt-1">Rp 25.000</p>
+                        <p class="text-gray-600 text-sm mt-2 mb-4">Bakso besar berisi sambal & cabai rawit utuh. Pedasnya nendang, bikin keringatan tapi nagih!</p>
+                        <a href="https://wa.me/6282183379680?text=Saya%20pesan%20Bakso%20Mercon%201%20Porsi" target="_blank" class="block w-full btn-kedua text-sm py-2">
+                            <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5. ✅ BAKSO KOMPLIT - 25.000 (FOTO KHUSUS BAKSO LENGKAP ISIAN) -->
+                <div class="card-menu">
+                    <img 
+                        src="https://images.unsplash.com/photo-1574484283957-209015060306?q=80&w=600&auto=format&fit=crop" 
+                        alt="Bakso Komplit Lengkap Isian Telur, Urat, Tetelan" 
+                        class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-xl text-gray-800">🥘 Bakso Komplit</h3>
+                        <div class="text-yellow-500 text-sm my-1">⭐⭐⭐⭐⭐</div>
+                        <p class="text-merah font-bold text-lg mt-1">Rp 25.000</p>
+                        <p class="text-gray-600 text-sm mt-2 mb-4">Paket lengkap: Bakso Halus, Urat, Isi Telur, Tetelan Sapi, Sayuran & Mie. Paling Puas!</p>
+                        <a href="https://wa.me/6282183379680?text=Saya%20pesan%20Bakso%20Komplit%201%20Porsi" target="_blank" class="block w-full btn-kedua text-sm py-2">
+                            <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 📖 TENTANG KAMI -->
+    <section id="tentang" class="bg-pinkSoft/10 py-10">
+        <div class="container mx-auto px-4 max-w-3xl text-center">
+            <h2 class="section-title">🍲 Tentang Warung Kami</h2>
+            <p class="text-biasa text-lg">
+                <span class="font-bold text-merah text-xl">BAKSO SIDO MAMPIR</span> berdiri sejak tahun 2020, berawal dari resep rahasia keluarga yang diwariskan turun-temurun. Kami berlokasi di <b>Jln 20 Desa Sumber Mulyo</b>, melayani pelanggan dengan hati dan kualitas terbaik.
+                <br><br>
+                Filosofi kami sederhana: <i>"Rasa Enak, Harga Bersahabat, Pelayanan Ramah."</i> Kami percaya makanan enak tidak harus mahal, dan kebersihan adalah nomor satu. Datanglah langsung atau pesan via WA, kami siap melayani Anda!
+            </p>
+        </div>
+    </section>
+
+    <!-- 💬 TESTIMONI PELANGGAN -->
+    <section id="testimoni" class="py-10 bg-white/60">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">💬 Apa Kata Pelanggan Kami?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6">
+                <div class="bg-pinkSoft/40 rounded-lg shadow p-5 border-l-4 border-merah hover:-translate-y-1 transition">
+                    <p class="italic text-biasa">"Sudah langganan 2 tahun lebih! Bakso uratnya paling juara, kenyal pas, kuahnya gurih banget. Harganya murah, porsinya banyak. Pokoknya Sido Mampir terus deh! 👍🔥"</p>
+                    <p class="font-bold text-merah mt-3">- Rina 🥢</p>
+                </div>
+                <div class="bg-pinkSoft/40 rounded-lg shadow p-5 border-l-4 border-merah hover:-translate-y-1 transition">
+                    <p class="italic text-biasa">"Anak saya paling suka Mie Ayam Baksonya. Tekstur mienya pas, ayamnya manis gurih. Bakso Merconnya saya yang suka, pedasnya bener-bener nendang tapi tetap enak. Recommended!"</p>
+                    <p class="font-bold text-merah mt-3">- Dimas 🌶️</p>
+                </div>
+                <div class="bg-pinkSoft/40 rounded-lg shadow p-5 border-l-4 border-merah hover:-translate-y-1 transition">
+                    <p class="italic text-biasa">"Warung paling bersih dan nyaman di daerah sini. Pelayanannya ramah, pesanan cepat siap. Kalau bawa keluarga pasti makan di sini. Bakso Komplitnya bener-bener mengenyangkan & enak!"</p>
+                    <p class="font-bold text-merah mt-3">- Sari 🥣</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📞 KONTAK & LOKASI (✅ 100% DATA KAMU) -->
+    <section id="kontak" class="py-12 bg-merah/10">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="section-title">📍 Lokasi & Pemesanan</h2>
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                
+                <!-- DATA KANAN: ALAMAT & NO HP -->
+                <div>
+                    <h3 class="text-xl font-semibold text-merah mb-4"><i class="fas fa-map-marker-alt text-2xl mr-2"></i> Alamat Lengkap</h3>
+                    <p class="text-biasa text-lg font-medium mb-5 pl-10">
+                        Jln 20 Desa Sumber Mulyo <br>
+                        (Buka Setiap Hari: 09.00 - 21.00 WIB)
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-merah mb-4"><i class="fas fa-phone-volume text-2xl mr-2"></i> Kontak / WhatsApp</h3>
+                    <p class="text-biasa text-lg font-bold text-green-600 mb-6 pl-10">
+                        <a href="https://wa.me/6282183379680" target="_blank" class="hover:underline">0821 - 8337 - 9680</a>
+                    </p>
+
+                    <a href="https://wa.me/6282183379680?text=Halo%20Admin%20Bakso%20Sido%20Mampir%2C%20Saya%20ingin%20pesan%20makanan%20atau%20bertanya%20info." target="_blank" class="btn-utama w-full inline-block text-center text-lg">
+                        <i class="fab fa-whatsapp mr-2"></i> CHAT & PESAN LANGSUNG
+                    </a>
+                </div>
+
+                <!-- GAMBAR KIRI: PETA/ILUSTRASI -->
+                <div class="rounded-xl overflow-hidden shadow-md">
+                    <img 
+                        src="https://images.unsplash.com/photo-1565299624082-9b381065872c?q=80&w=500&auto=format&fit=crop" 
+                        alt="Lokasi Warung Bakso Sido Mampir yang bersih dan nyaman" 
+                        class="w-full h-auto object-cover">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 🦶 FOOTER -->
+    <footer class="bg-merah text-white py-6 text-center">
+        <p class="text-lg font-semibold">© 2026 BAKSO SIDO MAMPIR - Lezat, Segar, Halal</p>
+        <p class="opacity-85 text-sm mt-2">Jln 20 Desa Sumber Mulyo | Telepon/WA: 0821 - 8337 - 9680</p>
+        <p class="text-xs mt-3 opacity-70">Dibuat dengan ❤️ untuk pecinta kuliner Indonesia</p>
+    </footer>
+
+</body>
+</html>
